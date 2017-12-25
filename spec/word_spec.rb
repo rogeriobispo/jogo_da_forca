@@ -11,10 +11,10 @@ describe Word do
     it 'when there are a found character' do
       word = "caracter"
       arr = word.split('').map!{"-"}
-      caracter1 = 'c'
-      charcter2 = 'r'
-      arr = Word.review_character(arr, word, caracter1)
-      arr = Word.review_character(arr, word, caracter2)
+      character1 = 'c'
+      character2 = 'r'
+      arr = Word.review_character(arr, word, character1)
+      arr = Word.review_character(arr, word, character2)
       expect(arr).to eq ['c', '-', 'r', '-', 'c', '-', '-', 'r']
 
     end

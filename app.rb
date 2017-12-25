@@ -22,6 +22,7 @@ while !(game.game_over?)
   attempt = gets.chomp.to_s[0]
   if word.include? attempt
     puts "acertou misserave"
+    arr_word = Word.review_character(arr_word, word, attempt)
   else
     game.miss
   end
