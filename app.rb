@@ -6,7 +6,7 @@ require 'byebug'
 puts "Jogo da Forca"
 
 word = Raffle.sort(Word.words)
-
+puts word
 game = Game.new
 print "Digite seu nome: "
 name = gets.to_s
@@ -14,12 +14,15 @@ game.start(name)
 arr_word = word.split('').map!{ "-" }
 puts word
 while !(game.game_over?)
+
   system('clear')
   puts "Erros: #{game.errors}"
   arr_word.each{ |c| print " #{c}" }
+  break unless arr_word.include? '-'
   puts ""
   print "Escola uma letra: "
   attempt = gets.chomp.to_s[0]
+
   if word.include? attempt
     puts "acertou misserave"
     arr_word = Word.review_character(arr_word, word, attempt)
