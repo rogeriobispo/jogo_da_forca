@@ -12,11 +12,16 @@ name = gets.to_s
 game.start(name)
 arr_word = word.split('').map!{ "-" }
 system('clear')
+
 while !(game.game_over?)
-  picture.charge(game.errors)
+  picture.charge_defeated(game.errors)
   puts "Erros: #{game.errors}"
   arr_word.each{ |c| print " #{c}" }
-  break unless arr_word.include? '-'
+	unless arr_word.include? '-'
+		system('clear')
+		picture.you_win
+		break
+  end
   puts ""
   print "Escola uma letra: "
   attempt = gets.chomp.to_s[0]
@@ -27,9 +32,7 @@ while !(game.game_over?)
   else
     game.miss
   end
-  system('clear') if game.errors <= 8
+  system('clear')
 end
 
-
-
-
+picture.charge_defeated(game.errors) if arr_word.include? '-'

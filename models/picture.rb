@@ -1,10 +1,16 @@
 require_relative '../models/game.rb'
 class Picture
-  def charge(errors)
+  def charge_defeated(errors)
     first_lines(lines_to_show(errors)).each do |line|
       puts line
     end
   end
+
+	def you_win
+		File.open('libs/you_win.txt', 'r').readlines.each do |line|
+			puts line
+		end
+	end
 
   private
 
@@ -20,7 +26,7 @@ class Picture
   end
 
   def file
-   File.open('libs/image.txt', 'r')
+   File.open('libs/game_over.txt', 'r')
   end
 
   def lines_to_show(errors)
