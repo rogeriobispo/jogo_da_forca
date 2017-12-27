@@ -1,21 +1,19 @@
-require_relative 'models/word.rb'
-require_relative 'models/raffle.rb'
-require_relative 'models/game.rb'
-require 'byebug'
-
+require_relative 'models/word'
+require_relative 'models/raffle'
+require_relative 'models/game'
+require_relative 'models/picture'
 puts "Jogo da Forca"
-
 word = Raffle.sort(Word.words)
 puts word
 game = Game.new
+picture = Picture.new
 print "Digite seu nome: "
 name = gets.to_s
 game.start(name)
 arr_word = word.split('').map!{ "-" }
-puts word
+system('clear')
 while !(game.game_over?)
-
-  system('clear')
+  picture.charge(game.errors)
   puts "Erros: #{game.errors}"
   arr_word.each{ |c| print " #{c}" }
   break unless arr_word.include? '-'
@@ -29,7 +27,9 @@ while !(game.game_over?)
   else
     game.miss
   end
+  system('clear') if game.errors <= 8
 end
+
 
 
 

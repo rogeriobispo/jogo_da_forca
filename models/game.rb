@@ -1,4 +1,5 @@
 class Game
+  MAX_ERRORS = 7
   attr_reader :name
   attr_reader :errors
 
@@ -11,11 +12,7 @@ class Game
   end
 
   def game_over?
-    if @errors > 7
-      true
-    else
-      false
-    end
+    @errors > MAX_ERRORS  ? true : false
   end
 
   def miss
