@@ -1,6 +1,6 @@
 require_relative '../models/game.rb'
 class Picture
-  def charge_defeated(errors)
+  def defeated(errors)
     first_lines(lines_to_show(errors)).each do |line|
       puts line
     end

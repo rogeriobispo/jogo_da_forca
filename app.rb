@@ -14,7 +14,7 @@ arr_word = word.split('').map!{ "-" }
 system('clear')
 
 while !(game.game_over?)
-  picture.charge_defeated(game.errors)
+  picture.defeated(game.errors)
   puts "Erros: #{game.errors}"
   arr_word.each{ |c| print " #{c}" }
 	unless arr_word.include? '-'
@@ -35,4 +35,4 @@ while !(game.game_over?)
   system('clear')
 end
 
-picture.charge_defeated(game.errors) if arr_word.include? '-'
+picture.defeated(game.errors) if arr_word.include? '-'
