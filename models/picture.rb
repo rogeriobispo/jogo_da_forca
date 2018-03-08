@@ -6,11 +6,11 @@ class Picture
     end
   end
 
-	def you_win
-		File.open('libs/you_win.txt', 'r').readlines.each do |line|
-			puts line
-		end
-	end
+  def you_win
+    File.open('libs/you_win.txt', 'r').readlines.each do |line|
+      puts line
+    end
+  end
 
   private
 
