@@ -21,16 +21,17 @@ class Picture
   def first_lines(qtde_lines)
     array_picture.first(qtde_lines)
   end
+
   def array_picture
-   file.to_a
+    file.to_a
   end
 
   def file
-   File.open('libs/game_over.txt', 'r')
+    File.open('libs/game_over.txt', 'r')
   end
 
   def lines_to_show(errors)
-      errors * lines_per_errors
+    errors * lines_per_errors
   end
 
   def lines_per_errors

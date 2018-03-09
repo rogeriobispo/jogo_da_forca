@@ -12,7 +12,7 @@ class Game
   end
 
   def game_over?
-    @errors > MAX_ERRORS  ? true : false
+    @errors > MAX_ERRORS
   end
 
   def miss

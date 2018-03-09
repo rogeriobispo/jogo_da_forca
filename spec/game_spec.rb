@@ -1,10 +1,9 @@
 require_relative '../models/game.rb'
 
 RSpec.describe Game, type: :model do
-
   describe '#start' do
     it 'to start with a name' do
-      subject.start("Rogerio")
+      subject.start('Rogerio')
       expect(subject.name).to be subject.name
     end
 
@@ -15,7 +14,7 @@ RSpec.describe Game, type: :model do
 
   describe '#game_over?' do
     it 'more than 7 mistake' do
-      8.times{ subject.miss }
+      8.times { subject.miss }
       expect(subject.game_over?).to be true
     end
 
